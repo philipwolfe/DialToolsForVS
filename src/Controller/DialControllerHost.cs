@@ -81,7 +81,6 @@ namespace DialControllerTools
             }
 
             var mainWindow = Application.Current.MainWindow;
-
             void OnMainWindowLoaded(object sender, RoutedEventArgs e)
             {
                 CreateStatusBarItemImpl();
@@ -178,10 +177,10 @@ namespace DialControllerTools
                     return (Controller: controller, provider.Metadata.Order);
                 });
             _controllers = (await Task.WhenAll(tasks))
-                .Where(result => result.Controller != null)
-                .OrderBy(result => result.Order)  //probably not needed
-                .Select(result => result.Controller)
-                .ToImmutableArray();
+                           .Where(result => result.Controller != null)
+                           .OrderBy(result => result.Order)  //probably not needed
+                           .Select(result => result.Controller)
+                           .ToImmutableArray();
 
             await SetDefaultItemsAsync();
         }
