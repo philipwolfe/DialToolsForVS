@@ -81,6 +81,7 @@ namespace DialControllerTools
             }
 
             var mainWindow = Application.Current.MainWindow;
+
             void OnMainWindowLoaded(object sender, RoutedEventArgs e)
             {
                 CreateStatusBarItemImpl();
